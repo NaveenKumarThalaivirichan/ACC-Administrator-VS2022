@@ -219,9 +219,9 @@ class Table {
                         }
                         const url = TABLE_TABS[this.#tabKey].REQUEST_URL;
                         try {
-                            const resp = await axios.post(url, data);
-                            resp.data.Succeed && resp.data.Succeed.forEach(item => console.log(item + ' is created'));
-                            resp.data.Failed && resp.data.Failed.forEach(item => console.warn(item + ' failed to be created'));
+                            const resp = await axios.post(url, data);                           
+                            resp.data.succeed && resp.data.succeed.forEach(item => console.log(item + ' is created'));
+                            resp.data.failed && resp.data.failed.forEach(item => console.warn(item + ' failed to be created'));
                             await sleep(3000);
                             await this.resetData();
                         } catch (err) {
